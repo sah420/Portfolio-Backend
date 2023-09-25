@@ -44,11 +44,12 @@ class MessageRepository:
         Returns:
             dict: Contains the inserted ID of the message.
         """
-        document["date_submitted"] = datetime.now()
+        # Modify the date attribute of the document directly (if required)
+        document["date"] = datetime.now()
 
         async with get_database() as db:
             collection = db[self.collection_name]
-            result = await collection.insert_one(document)
+            result = await collection.insert_one(document)  # Convert the Pydantic model to a dictionary
             return {"_id": str(result.inserted_id)}
 
     async def delete_message(self, filter: dict) -> bool:

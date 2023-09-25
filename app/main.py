@@ -9,7 +9,7 @@ Imports:
 """
 
 from fastapi import FastAPI
-from app.routers import health
+from app.routers import health, message
 
 app = FastAPI(
     title="Python Task Salem Abu Hassan",
@@ -19,3 +19,4 @@ app = FastAPI(
 )
 
 app.include_router(health.router)
+app.include_router(message.router)
