@@ -17,7 +17,7 @@ load_dotenv()
 class Settings(BaseSettings):
     """Configuration settings for the application."""
     mongodb_url: str = os.getenv("DATABASE_URI")
-    mongodb_db_name: str = "python_task_salem_abuhassan"
+    mongodb_db_name: str = "portfolio-website"
 
 
 settings = Settings()
