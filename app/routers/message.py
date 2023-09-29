@@ -35,6 +35,7 @@ async def create_message(message: Message):
     Returns:
         ContactRequest: Created message data.
     """
+    print(message.dict())
     return await message_service.create_message(message)
 
 
