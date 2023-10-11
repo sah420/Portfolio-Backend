@@ -14,6 +14,11 @@ from fastapi import APIRouter
 router = APIRouter()
 
 
+@router.get("/", tags=["default"])
+async def default_page():
+    return {"Status": "Backend running successfully."}
+
+
 @router.get("/health", tags=["health"])
 async def health_check():
     """
@@ -22,5 +27,5 @@ async def health_check():
     Returns:
         dict: A dictionary indicating the health status.
     """
-    return {"status": "ok"}
+    return {"Status": "Okay"}
 
